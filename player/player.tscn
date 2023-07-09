@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bixg7fo1hx5ri"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_1gpoc"]
+[ext_resource type="PackedScene" uid="uid://bmjjxw7ahd32c" path="res://weapons/v_akm.tscn" id="2_f8o3r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5xkmr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uje0d"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_1gpoc")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_5xkmr")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_uje0d")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.613146, -0.49838)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Gun" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(0.52786, 0, -0.0475746, 0, 0.53, 0, 0.0475746, 0, 0.52786, 1.61691, -2.26471, -4.26773)
+
+[node name="AKM" parent="Head/Camera3D/Gun" instance=ExtResource("2_f8o3r")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -100)

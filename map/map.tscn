@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4pp02avacf11"]
+
+[ext_resource type="Texture2D" uid="uid://bwm3chclmoo0x" path="res://map/textures/dark/texture_01.png" id="1_rdudu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mkm37"]
+size = Vector3(100, 0.05, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbtf5"]
+albedo_texture = ExtResource("1_rdudu")
+uv1_triplanar = true
+
+[node name="Map" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.676182, 0.736735, 0, -0.736735, -0.676182, -0.111914, 45.6259, -33.1043)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_mkm37")
+surface_material_override/0 = SubResource("StandardMaterial3D_lbtf5")

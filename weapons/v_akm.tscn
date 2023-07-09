@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmjjxw7ahd32c"]
+
+[ext_resource type="PackedScene" uid="uid://beinmkqb1ie3n" path="res://weapons/v_akm.glb" id="1_eyhpb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dxpj"]
+no_depth_test = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbct5"]
+no_depth_test = true
+
+[node name="v_akm" instance=ExtResource("1_eyhpb")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(0.293281, 0, 3.35222, 0, 3.36502, 0, -3.35222, 0, 0.293281, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-1.8078, 3.91447e-09, -0.810504)
+bones/0/rotation = Quaternion(-0.816795, -0.566416, -0.109597, 0.00283622)
+bones/1/rotation = Quaternion(-0.196825, -0.0288595, -0.354581, 0.913619)
+bones/2/rotation = Quaternion(-0.184613, -0.0909483, 0.0450291, 0.977558)
+bones/3/rotation = Quaternion(-0.571454, 0.125048, -0.485105, 0.649982)
+bones/4/rotation = Quaternion(0.527107, 0.129258, -0.168523, 0.822831)
+bones/5/rotation = Quaternion(0.0524045, -0.00302947, -0.34695, 0.936414)
+bones/7/rotation = Quaternion(-0.578644, -0.412012, -0.347238, 0.612244)
+bones/9/rotation = Quaternion(0.909267, 0.137402, -0.0944294, 0.381363)
+bones/10/rotation = Quaternion(-0.61624, -0.0131715, -0.450938, 0.645546)
+bones/11/rotation = Quaternion(0.0112365, -0.186452, 0.17905, 0.965945)
+bones/12/position = Vector3(-3.03332, 0.244706, 1.18565)
+bones/12/rotation = Quaternion(0.35177, 0.0778053, -0.925153, 0.11957)
+bones/13/rotation = Quaternion(-0.611988, -0.0377174, 0.436604, 0.65835)
+bones/14/rotation = Quaternion(0.163644, 0.308365, 0.0705814, 0.934425)
+bones/15/rotation = Quaternion(0.472568, -0.190617, -0.686378, 0.518874)
+bones/16/rotation = Quaternion(-0.559156, -0.0603272, -0.185399, 0.805812)
+bones/17/rotation = Quaternion(0.0833335, -0.0452577, -0.308888, 0.946359)
+bones/18/rotation = Quaternion(-0.457826, 0.133959, -0.229189, 0.848483)
+bones/20/rotation = Quaternion(-0.0780328, 0.110952, -0.203941, 0.96954)
+bones/21/rotation = Quaternion(-0.895894, -0.0765698, -0.354727, 0.25628)
+bones/22/rotation = Quaternion(0.827935, 0.184347, -0.0726128, 0.52466)
+bones/23/rotation = Quaternion(0.205909, -0.100401, 0.0759745, 0.970438)
+bones/24/position = Vector3(-0.314438, 0.417885, 0.504834)
+bones/25/position = Vector3(-0.375458, -0.278622, 0.00222763)
+
+[node name="AKM_model" parent="Armature/Skeleton3D" index="0"]
+material_overlay = SubResource("StandardMaterial3D_6dxpj")
+
+[node name="ArmModel" parent="Armature/Skeleton3D" index="1"]
+material_override = SubResource("StandardMaterial3D_jbct5")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|Armature|Idle"
